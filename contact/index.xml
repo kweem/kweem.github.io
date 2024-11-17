@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Contact on Tegenlicht.be</title>
-    <link>https://tegenlicht.be/contact/</link>
+    <link>https://kweem.github.io/contact/</link>
     <description>Recent content in Contact on Tegenlicht.be</description>
     <generator>Hugo</generator>
     <language>nl-BE</language>
-    <atom:link href="https://tegenlicht.be/contact/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kweem.github.io/contact/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

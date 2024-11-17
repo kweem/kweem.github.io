@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Over on Tegenlicht.be</title>
-    <link>https://tegenlicht.be/over/</link>
+    <link>https://kweem.github.io/over/</link>
     <description>Recent content in Over on Tegenlicht.be</description>
     <generator>Hugo</generator>
     <language>nl-BE</language>
-    <atom:link href="https://tegenlicht.be/over/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kweem.github.io/over/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
