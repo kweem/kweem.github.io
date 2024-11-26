@@ -21,12 +21,12 @@
 
 
 <link rel="preload" href="/js/jquery-3.7.1.min.js" as="script">
-
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
 >
-<link rel="stylesheet" href="/tegenlicht.min.7c74506d36ac8f55c13de328deee4df6b57745bd06f313a07c22a003d8bdd8bc.css">
+
+<link rel="stylesheet" href="/tegenlicht.min.1f131d9d160f5c298bf74d212220b217ffeee2fb9654cc7e446718567ed9b850.css">
 <link rel="stylesheet" href="/css/bulma-jumbo-tiny.min.css">
 <script src="/js/jquery-3.7.1.min.js"></script>
 <script src="/js/burger.min.js"></script>
@@ -44,6 +44,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script>
+const matchPrefersLight = window.matchMedia('(prefers-color-scheme:light)');
+if (matchPrefersLight.matches) {
+  document.documentElement.setAttribute('data-theme', 'light');
+} else {
+  document.documentElement.setAttribute('data-theme', 'dark');
+};
+
+</script>
 
 <title>Tags | Tegenlicht.be</title>
 

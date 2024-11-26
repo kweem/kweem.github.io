@@ -21,12 +21,12 @@
 
 
 <link rel="preload" href="/js/jquery-3.7.1.min.js" as="script">
-
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
 >
-<link rel="stylesheet" href="/tegenlicht.min.7c74506d36ac8f55c13de328deee4df6b57745bd06f313a07c22a003d8bdd8bc.css">
+
+<link rel="stylesheet" href="/tegenlicht.min.1f131d9d160f5c298bf74d212220b217ffeee2fb9654cc7e446718567ed9b850.css">
 <link rel="stylesheet" href="/css/bulma-jumbo-tiny.min.css">
 <script src="/js/jquery-3.7.1.min.js"></script>
 <script src="/js/burger.min.js"></script>
@@ -44,6 +44,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script>
+const matchPrefersLight = window.matchMedia('(prefers-color-scheme:light)');
+if (matchPrefersLight.matches) {
+  document.documentElement.setAttribute('data-theme', 'light');
+} else {
+  document.documentElement.setAttribute('data-theme', 'dark');
+};
+
+</script>
 
 <title>Contact | Tegenlicht.be</title>
 
@@ -108,10 +118,6 @@
 <h1 class="title">Contact</h1>
 
 <div class="content has-text-justified">      
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae condimentum neque. Integer sollicitudin odio vel ligula iaculis, ac bibendum eros laoreet. Sed placerat efficitur metus sit amet consequat. Phasellus nisl mauris, bibendum vitae dictum pharetra, facilisis sed odio. Nullam sapien mauris, finibus eu malesuada at, mattis in mauris. Cras pharetra in sem ut iaculis. Quisque rhoncus arcu nec sagittis lobortis. Nullam fermentum feugiat consequat. Integer hendrerit lectus pretium lorem posuere accumsan. Pellentesque varius lorem in magna ultrices lacinia.</p>
-<p>Fusce vehicula ultricies diam lacinia lobortis. Suspendisse quis ligula augue. Mauris id ex metus. Quisque nisl felis, maximus vitae iaculis et, imperdiet sed lorem. Phasellus interdum tellus sed ornare porta. Sed metus nulla, pharetra vel scelerisque id, cursus sed nisi. Aliquam sagittis augue neque, sed rutrum sapien semper at. Cras ultrices a tellus ac interdum. Aliquam lobortis auctor tellus, et lobortis ante. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-
-  <br/>
   <nav class="level">
     <div class="level-item has-text-centered">
       <div>
@@ -132,11 +138,74 @@
       </div>
     </div>
   </nav>
+  <section class="section">
+  <div class="container">
+    <h2 class="title has-text-centered is-2">Vaak gestelde vragen</h2>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Hoe lang duurt het voordat we de foto's hebben?</span>
+              <span class="icon">
+                <i class="fas fa-chevron-down"></i>
+              </span>
+            </div>
+            <div class="faq-answer">
+              <p>Ongeveer een tweetal weken, gerekend van aan de fotoshoot, kan je de foto's verwachten.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Wat krijg je precies?</span>
+              <span class="icon">
+                <i class="fas fa-chevron-down"></i>
+              </span>
+            </div>
+            <div class="faq-answer">
+              <p>Je krijgt de beelden digitaal, in hoge resolutie en zonder watermerk.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How long until I receive my photos?</span>
+              <span class="icon">
+                <i class="fas fa-chevron-down"></i>
+              </span>
+            </div>
+            <div class="faq-answer">
+              <p>For portrait sessions, you'll receive your edited photos within 1-2 weeks. Wedding photos are typically delivered within 4-6 weeks after your event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('is-active');
+      
+      // Close all other FAQ items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('is-active');
+        }
+      });
+      
+      // Toggle current FAQ item
+      item.classList.toggle('is-active');
+    });
+  });
+});
+</script>
 </div>
-
-
-
-
 
 
         </div>
