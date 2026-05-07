@@ -483,6 +483,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:32px var(--pad-h);disp
   .c-links{justify-content:flex-start;margin-top:32px}
   .email-reveal-btn{font-size:clamp(1.4rem,6vw,1.8rem)}
   .cp-grid{grid-template-columns:1fr 1fr}
+  .cp-card{min-width:0}
   .faq-item{grid-template-columns:2.5rem 1fr;gap:16px}
   .over-grid{grid-template-columns:1fr;gap:36px}
   .spotlicht-grid{grid-template-columns:1fr}
@@ -491,4 +492,5 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:32px var(--pad-h);disp
 }
 @media(max-width:480px){
   .hero-counter{display:none}
+  .cp-grid{grid-template-columns:1fr}
 }
