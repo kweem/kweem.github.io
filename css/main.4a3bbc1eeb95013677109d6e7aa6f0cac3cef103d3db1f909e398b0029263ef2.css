@@ -193,6 +193,7 @@ nav.scrolled{background:rgba(9,8,6,.92);backdrop-filter:blur(12px);-webkit-backd
 }
 .expand-panel::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--ember),rgba(191,90,36,.1),transparent);pointer-events:none}
 .expand-panel.is-open{max-height:4000px}
+.expand-panel.no-transition{transition:none}
 .expand-inner{
   margin:0 auto;max-width:1000px;
   padding:clamp(36px,5vw,60px) var(--pad-h) clamp(40px,5vw,68px);

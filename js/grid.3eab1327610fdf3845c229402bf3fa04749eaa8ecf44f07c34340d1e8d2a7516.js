@@ -65,7 +65,12 @@ function repositionPanel(clickedCard, panel) {
 
 function toggleExpand(key, row, clickedCard) {
   const same = openKey === key;
-  document.querySelectorAll('.expand-panel').forEach(p => p.classList.remove('is-open'));
+  document.querySelectorAll('.expand-panel').forEach(p => {
+    p.classList.add('no-transition');
+    p.classList.remove('is-open');
+  });
+  document.body.offsetHeight; // force reflow so instant-close is applied
+  document.querySelectorAll('.expand-panel').forEach(p => p.classList.remove('no-transition'));
   document.querySelectorAll('.prod-card').forEach(c => c.classList.remove('is-open'));
   if (window.pauseAllPlayers) {
     window.pauseAllPlayers();
@@ -138,7 +143,7 @@ function toggleExpand(key, row, clickedCard) {
     const rect = panel.getBoundingClientRect();
     const scrollY = window.scrollY + rect.top - 250;
     window.scrollTo({ top: scrollY, behavior: 'smooth' });
-  }, 100);
+  }, 50);
 }
 
 function closeExpand(scrollToCard) {
