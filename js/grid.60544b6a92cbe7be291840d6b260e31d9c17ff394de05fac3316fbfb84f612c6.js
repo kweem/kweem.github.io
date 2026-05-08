@@ -5,12 +5,12 @@ function initGrid() {
   // Click and keyboard handlers
   document.querySelectorAll('.prod-card').forEach(card => {
     card.addEventListener('click', () => {
-      toggleExpand(card.dataset.key, parseInt(card.dataset.row));
+      toggleExpand(card.dataset.key, parseInt(card.dataset.row), card);
     });
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        toggleExpand(card.dataset.key, parseInt(card.dataset.row));
+        toggleExpand(card.dataset.key, parseInt(card.dataset.row), card);
       }
     });
   });
@@ -53,7 +53,17 @@ function initGrid() {
 /* ── Expand/collapse ── */
 let openKey = null, openRow = null;
 
-function toggleExpand(key, row) {
+function repositionPanel(clickedCard, panel) {
+  const top = clickedCard.getBoundingClientRect().top;
+  const allCards = Array.from(document.querySelectorAll('.prod-card'));
+  const rowCards = allCards.filter(c => Math.abs(c.getBoundingClientRect().top - top) < 2);
+  const lastInRow = rowCards[rowCards.length - 1];
+  if (lastInRow.nextElementSibling !== panel) {
+    lastInRow.after(panel);
+  }
+}
+
+function toggleExpand(key, row, clickedCard) {
   const same = openKey === key;
   document.querySelectorAll('.expand-panel').forEach(p => p.classList.remove('is-open'));
   document.querySelectorAll('.prod-card').forEach(c => c.classList.remove('is-open'));
@@ -68,6 +78,9 @@ function toggleExpand(key, row) {
     openRow = null;
     return;
   }
+
+  const panel = document.getElementById('panel-' + row);
+  if (clickedCard) repositionPanel(clickedCard, panel);
 
   openKey = key;
   openRow = row;
@@ -84,7 +97,7 @@ function toggleExpand(key, row) {
   gsap.set(elL, { opacity: 0, x: -20 });
   gsap.set(elR, { opacity: 0, x:  20 });
 
-  document.getElementById('panel-' + row).classList.add('is-open');
+  panel.classList.add('is-open');
   document.querySelectorAll('.prod-card').forEach(c => {
     if (c.dataset.key === key) c.classList.add('is-open');
   });
